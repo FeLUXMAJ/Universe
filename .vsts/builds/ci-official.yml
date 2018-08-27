@@ -50,6 +50,13 @@ phases:
       pathtoPublish: ./artifacts/
       artifactName: artifacts-Windows-Release
       artifactType: Container
+  # Detect OSS Components in use in the product. Only needs to run on one OS in the matrix.
+  - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
+    displayName: 'Component Detection'
+    inputs:
+      # This funky GUID represents the product "aspnet-experiments"
+      governanceProduct: '214fb19c-b679-e811-80c3-0004ffb4789e'
+      scanType: LogOnly
 
 - phase: macOS
   dependsOn: Windows
