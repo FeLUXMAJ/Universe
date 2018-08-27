@@ -57,6 +57,7 @@ phases:
       # This funky GUID represents the product "aspnet-experiments"
       governanceProduct: '214fb19c-b679-e811-80c3-0004ffb4789e'
       scanType: LogOnly
+      snapshotForceEnabled: true
 
 - phase: macOS
   dependsOn: Windows
